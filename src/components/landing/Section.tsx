@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import Icon from "@/components/ui/icon"
 import type { SectionProps } from "@/types"
 
-export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText }: SectionProps) {
+export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText, onScrollDown }: SectionProps) {
   return (
     <section id={id} className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
       {subtitle && (
@@ -48,6 +49,18 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
             {buttonText}
           </Button>
         </motion.div>
+      )}
+      {onScrollDown && (
+        <motion.button
+          onClick={onScrollDown}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-neutral-500 hover:text-white transition-colors flex flex-col items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={isActive ? { opacity: 1, y: [0, 8, 0] } : {}}
+          transition={{ duration: 1.5, repeat: Infinity, delay: 0.8 }}
+        >
+          <span className="text-sm tracking-widest uppercase">Читать дальше</span>
+          <Icon name="ChevronDown" size={20} />
+        </motion.button>
       )}
     </section>
   )

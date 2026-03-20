@@ -67,6 +67,7 @@ export default function LandingPage() {
             key={section.id}
             {...section}
             isActive={index === activeSection}
+            onScrollDown={index === 0 ? () => handleNavClick(1) : undefined}
           />
         ))}
       </div>
