@@ -44,7 +44,8 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           <Button
             variant="outline"
             size="lg"
-            className="text-[#FF4D00] bg-transparent border-[#FF4D00] hover:bg-[#FF4D00] hover:text-black transition-colors"
+            onClick={onScrollDown}
+            className="text-[#10a37f] bg-transparent border-[#10a37f] hover:bg-[#10a37f] hover:text-white transition-colors"
           >
             {buttonText}
           </Button>

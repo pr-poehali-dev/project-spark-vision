@@ -6,7 +6,7 @@ export const sections = [
     subtitle: <Badge variant="outline" className="text-white border-white">OpenAI · 2022</Badge>,
     title: "ChatGPT — ИИ, который изменил мир.",
     showButton: true,
-    buttonText: 'Узнать больше'
+    buttonText: 'Перейти на следующий слайд'
   },
   {
     id: 'about',
